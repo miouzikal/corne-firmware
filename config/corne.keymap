@@ -18,11 +18,10 @@
     behaviors {
         hyper: hyper {
             compatible = "zmk,behavior-mod-morph";
-            label = "HYPER";
+            #binding-cells = <0>;
             mods = <(MOD_LCTL | MOD_LSFT | MOD_LALT | MOD_LGUI)>;
             bindings = <&none>;
         };
-
         hyper_return: hyper_return {
             compatible = "zmk,behavior-hold-tap";
             label = "HYPER_RETURN";
