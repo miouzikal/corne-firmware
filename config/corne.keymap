@@ -7,6 +7,12 @@
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
 
+&mt {
+    tapping-term-ms = <300>;
+    quick-tap-ms = <0>;
+    flavor = "tap-preferred";
+};
+
 / {
     macros {
         e_accent_aigue: e_accent_aigue {
