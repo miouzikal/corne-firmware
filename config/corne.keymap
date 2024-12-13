@@ -20,6 +20,7 @@
             compatible = "zmk,behavior-mod-morph";
             label = "HYPER";
             mods = <(MOD_LCTL | MOD_LSFT | MOD_LALT | MOD_LGUI)>;
+            bindings = <&none>;
         };
 
         hyper_return: hyper_return {
