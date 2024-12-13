@@ -8,18 +8,24 @@
 #include <dt-bindings/zmk/keys.h>
 
 &mt {
-    tapping-term-ms = <300>;
-    quick-tap-ms = <300>;
-    flavor = "tap-unless-interrupted";
+    tapping-term-ms = <200>;
+    quick-tap-ms = <200>;
+    flavor = "tap-preferred";
+    require-prior-idle-ms = <125>;
 };
 
 / {
-    macros {
-        e_accent_aigue: e_accent_aigue {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&none>;
-            label = "E_ACCENT_AIGUE";
+    behaviors {
+        hyper_return: hyper_return {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HYPER_RETURN";
+            bindings = <&sk>, <&kp>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            flavor = "tap-unless-interrupted";
+            quick-tap-ms = <200>;
+            require-prior-idle-ms = <125>;
         };
     };
 
@@ -34,10 +40,10 @@
             //                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
 
             bindings = <
-&mo 4           &kp Q  &kp W           &kp E        &kp R           &kp T        &kp Y      &kp U          &kp I  &kp O  &kp P            &none
-&kp TAB         &kp A  &mt LEFT_ALT S  &mt LCTRL D  &mt LEFT_GUI F  &kp G        &kp H      &kp J          &kp K  &kp L  &none            &none
-&kp LEFT_SHIFT  &kp Z  &kp X           &kp C        &kp V           &kp B        &kp N      &kp M          &none  &none  &e_accent_aigue  &kp RIGHT_SHIFT
-                                       &mo 1        &lt 3 ESC       &kp ENTER    &kp SPACE  &kp BACKSPACE  &mo 2
+&mo 4           &kp Q  &kp W           &kp E               &kp R               &kp T        &kp Y      &kp U                &kp I                &kp O            &kp P  &none
+&kp TAB         &kp A  &mt LEFT_ALT S  &mt LEFT_CONTROL D  &mt LEFT_COMMAND F  &kp G        &kp H      &mt RIGHT_COMMAND J  &mt RIGHT_CONTROL K  &mt RIGHT_ALT L  &none  &none
+&kp LEFT_SHIFT  &kp Z  &kp X           &kp C               &kp V               &kp B        &kp N      &kp M                &none                &none            &none  &kp RIGHT_SHIFT
+                                       &mo 1               &lt 3 ESC           &kp ENTER    &kp SPACE  &kp BACKSPACE        &mo 2
             >;
         };
 
@@ -58,10 +64,10 @@
 
         LeftSymbols {
             bindings = <
-&kp GRAVE  &kp EXCLAMATION  &kp AT_SIGN  &kp POUND  &kp DOLLAR  &kp PERCENT    &none  &none     &none      &none          &none  &none
-&none      &none            &none        &none      &none       &none          &none  &kp RGUI  &kp RCTRL  &kp RIGHT_ALT  &none  &none
-&none      &none            &none        &none      &none       &none          &none  &none     &none      &none          &none  &kp RIGHT_SHIFT
-                                         &none      &none       &none          &none  &none     &trans
+&kp GRAVE  &kp EXCLAMATION  &kp AT_SIGN  &kp POUND  &kp DOLLAR  &kp PERCENT    &none  &none              &none              &none          &none  &none
+&none      &none            &none        &none      &none       &none          &none  &kp RIGHT_COMMAND  &kp RIGHT_CONTROL  &kp RIGHT_ALT  &none  &none
+&none      &none            &none        &none      &none       &none          &none  &none              &none              &none          &none  &kp RIGHT_SHIFT
+                                         &none      &none       &none          &none  &none              &trans
             >;
         };
 
@@ -73,10 +79,10 @@
             //                    | GUI |     | SPC |   | ENT |     | ALT |
 
             bindings = <
-&kp F1          &kp F2  &kp F3        &kp F4     &kp F5    &kp F6    &kp F7    &kp F8         &kp F9       &kp F10    &kp F11  &kp F12
-&trans          &trans  &kp LEFT_ALT  &kp LCTRL  &kp LGUI  &trans    &kp LEFT  &kp DOWN       &kp UP       &kp RIGHT  &none    &none
-&kp LEFT_SHIFT  &trans  &trans        &trans     &trans    &trans    &kp HOME  &kp PAGE_DOWN  &kp PAGE_UP  &kp END    &none    &kp RIGHT_SHIFT
-                                      &trans     &trans    &trans    &trans    &trans         &trans
+&kp F1          &kp F2  &kp F3        &kp F4            &kp F5            &kp F6    &kp F7    &kp F8         &kp F9       &kp F10    &kp F11  &kp F12
+&trans          &trans  &kp LEFT_ALT  &kp LEFT_CONTROL  &kp LEFT_COMMAND  &trans    &kp LEFT  &kp DOWN       &kp UP       &kp RIGHT  &none    &none
+&kp LEFT_SHIFT  &trans  &trans        &trans            &trans            &trans    &kp HOME  &kp PAGE_DOWN  &kp PAGE_UP  &kp END    &none    &kp RIGHT_SHIFT
+                                      &trans            &trans            &trans    &trans    &trans         &trans
             >;
         };
 
