@@ -16,16 +16,10 @@
 
 / {
     behaviors {
-        hyper_return: hyper_return {
-            compatible = "zmk,behavior-hold-tap";
-            label = "HYPER_RETURN";
-            bindings = <&sk>, <&kp>;
-
-            #binding-cells = <2>;
-            tapping-term-ms = <200>;
-            flavor = "tap-unless-interrupted";
-            quick-tap-ms = <200>;
-            require-prior-idle-ms = <125>;
+        hyper: hyper {
+            compatible = "zmk,behavior-mod-morph";
+            label = "HYPER";
+            mods = <(MOD_LCTL | MOD_LSFT | MOD_LALT | MOD_LGUI)>;
         };
     };
 
