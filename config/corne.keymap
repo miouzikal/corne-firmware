@@ -48,10 +48,10 @@
             //                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
 
             bindings = <
-&mo 4           &kp Q  &kp W           &kp E               &kp R               &kp T                    &kp Y      &kp U                &kp I                &kp O            &kp P  &none
-&kp TAB         &kp A  &mt LEFT_ALT S  &mt LEFT_CONTROL D  &mt LEFT_COMMAND F  &kp G                    &kp H      &mt RIGHT_COMMAND J  &mt RIGHT_CONTROL K  &mt RIGHT_ALT L  &none  &none
-&kp LEFT_SHIFT  &kp Z  &kp X           &kp C               &kp V               &kp B                    &kp N      &kp M                &none                &none            &none  &kp RIGHT_SHIFT
-                                       &mo 1               &lt 3 ESC           &hyper_return 0 ENTER    &kp SPACE  &kp BACKSPACE        &mo 2
+&mo 4           &kp Q  &kp W           &kp E               &kp R               &kp T                                 &kp Y                                &kp U                &kp I                &kp O            &kp P  &none
+&kp TAB         &kp A  &mt LEFT_ALT S  &mt LEFT_CONTROL D  &mt LEFT_COMMAND F  &kp G                                 &kp H                                &mt RIGHT_COMMAND J  &mt RIGHT_CONTROL K  &mt RIGHT_ALT L  &none  &none
+&kp LEFT_SHIFT  &kp Z  &kp X           &kp C               &kp V               &kp B                                 &kp N                                &kp M                &none                &none            &none  &kp RIGHT_SHIFT
+                                       &mo 1               &lt 3 ESC           &mt LS(LA(LC(LEFT_COMMAND))) ENTER    &mt RS(RA(RC(RIGHT_COMMAND))) SPACE  &kp BACKSPACE        &mo 2
             >;
         };
 
